@@ -1,0 +1,60 @@
+<div class="">
+  <div class="container bg-light border rounded shadow-sm p-4 w-50">
+    <form class="form text-start" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+      <!-- First Name -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-secondary small">First Name</label>
+        <input type="text" formControlName="firstName"
+          class="form-control form-control-sm border-secondary rounded-pill shadow-sm w-50"
+          placeholder="Enter first name">
+        @if(studentForm.get('firstName')?.invalid && studentForm.get('firstName')?.touched){
+          <span class="text-danger">First name is required (min 2 characters)</span>
+        }
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-secondary small">Last Name</label>
+        <input type="text" formControlName="lastName"
+          class="form-control form-control-sm border-secondary rounded-pill shadow-sm w-50"
+          placeholder="Enter last name">
+          @if(studentForm.get('lastName')?.invalid && studentForm.get('lastName')?.touched){
+          <span class="text-danger">Last Name is required</span>
+        }
+      </div>
+
+      <!-- Username -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold text-secondary small">Username</label>
+        <input type="text" formControlName="userName"
+          class="form-control form-control-sm border-info rounded-pill shadow-sm w-50"
+          placeholder="Enter username">
+        @if(studentForm.get('userName')?.invalid && studentForm.get('userName')?.touched){
+          <span class="text-danger">Username is required</span>
+        }
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="form-check mb-3">
+        <input class="form-check-input border-secondary shadow-sm" type="checkbox" formControlName="terms">
+        <label class="form-check-label small text-secondary">
+          I agree to the <a href="#" class="text-decoration-none">Terms & Conditions</a>
+        </label>
+        
+      </div>
+
+      <!-- Buttons -->
+      <div class="text-center d-flex justify-content-center gap-3">
+        <button type="submit" [disabled]="studentForm.invalid"
+          class="btn btn-sm btn-primary px-4 rounded-pill shadow">
+          Submit
+        </button>
+        <button type="reset" class="btn btn-sm btn-outline-secondary px-4 rounded-pill shadow">
+          Reset
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
