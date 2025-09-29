@@ -1,0 +1,16 @@
+<div class="container bg-light p-3 rounded">
+  <div class="mb-3">
+    <button class="btn btn-primary" (click)="getData()">Get Data</button>
+  </div>
+
+  <div>
+    <label class="form-label fw-semibold">Select User</label>
+    <select class="form-select w-50">
+
+      @for (user of userList; track $index) {
+        <option>{{ user.name }}</option>
+      }
+
+    </select>
+  </div>
+</div>
