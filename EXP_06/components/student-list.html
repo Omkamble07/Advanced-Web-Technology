@@ -1,0 +1,41 @@
+<div class="container mt-4 bg-light  border border-secondary rounded p-4">
+    <h2 class="text-center">Student List</h2>
+    <div class="">
+        <table class="table table-bordered  table-striped small w-50 text-center mx-auto mt-3">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>PRN</th>
+                    <th>COURSE</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(student of students; track student.id){
+                <tr>
+                    <td>{{student.id}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.prn}}</td>
+                    <td>{{student.course}}</td>
+                    <td>
+                        <button class="btn btn-danger btn-sm" (click)="deleteStudent(student.id)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="row justify-content-center mt-5 mx-auto w-50">
+        <div class="col-md-6">
+            <input type="text" placeholder="Name" class="form-control mb-2" [(ngModel)]="newStudent.name">
+            <input type="text" placeholder="PRN" class="form-control mb-2" [(ngModel)]="newStudent.prn">
+            <input type="text" placeholder="Course" class="form-control mb-2" [(ngModel)]="newStudent.course">
+            <button class="btn btn-primary w-100" (click)="addStudent()">Add</button>
+        </div>
+    </div>
+</div>
