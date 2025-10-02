@@ -7,7 +7,7 @@
 ### 5] Move into the project folder : cd StudentManagement
 ### 6] Build components : ng g c components/componentName
 ### 7] Build services : ng g service services/serverName
-### 8] Run : ng serve/ ng s/ ng s -o
+### 8] Run : ng s (ng serve)
 
 
 
